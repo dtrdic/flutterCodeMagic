@@ -1,4 +1,4 @@
-package com.example.davidapp
+package io.codemagic.DAVIDapp
 
 import io.flutter.embedding.android.FlutterActivity
 
