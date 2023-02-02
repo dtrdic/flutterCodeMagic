@@ -8,26 +8,26 @@ environment:
     - keystore_reference
   scripts:
     - name: Set up local.properties
-      script: | 
+      script: |
         echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
     - name: Get Flutter packages
-      script: | 
+      script: |
         flutter packages pub get
     - name: Build AAB with Flutter
-      script: | 
+      script: |
         flutter build appbundle --release
     - name: Build universal apk
-      script: | 
+      script: |
         android-app-bundle build-universal-apk \
           --bundle 'project_directory/build/**/outputs/**/*.aab' \
           --ks /tmp/keystore.keystore \
           --ks-pass $CM_KEYSTORE_PASSWORD \
           --ks-key-alias $CM_KEY_ALIAS \
           --key-pass $CM_KEY_PASSWORD
-    artifacts:
-      - build/**/outputs/**/*.aab
-      - build/**/outputs/**/mapping.txt
-      - flutter_drive.log
+artifacts:
+  - build/**/outputs/**/*.aab
+  - build/**/outputs/**/mapping.txt
+  - flutter_drive.log
 publishing:
   firebase:
     firebase_token: $FIREBASE_TOKEN
