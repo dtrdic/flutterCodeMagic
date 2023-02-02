@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "415099635189",
+    "project_id": "codemagic-3169c",
+    "storage_bucket": "codemagic-3169c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415099635189:android:ad5cbf6a24328db3b60cbc",
+        "android_client_info": {
+          "package_name": "io.codemagic.DAVIDapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415099635189-tg3s1pp8dnmhnrtmd473fd9frh9rlmhe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvJkV-mAnUT0qqhvCqc4ln18pD817qX-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415099635189-tg3s1pp8dnmhnrtmd473fd9frh9rlmhe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

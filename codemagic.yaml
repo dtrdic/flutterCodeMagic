@@ -14,3 +14,15 @@ environment:
       - $FLUTTER_ROOT/.pub-cache
       - $HOME/Library/Caches/CocoaPods
       - $CM_BUILD_DIR/node_modules
+scripts:
+  -name: Get Flutter Packages
+    script: flutter packages pub get
+  -name: Build apk
+    script: flutter build apk --release
+  -name: Build iOS
+    script: flutter build ios
+publishing:
+  firebase:
+    firebase_token: $FIREBASE_TOKEN
+    android:
+      app_id:
