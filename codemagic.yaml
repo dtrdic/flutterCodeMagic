@@ -4,8 +4,6 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m1
 environment:
-  groups:
-    - firebase_credentials
   xcode: latest
   cocoapods: default
   cache:
@@ -19,13 +17,9 @@ scripts:
     script: flutter packages pub get
   - name: Build apk
     script: flutter build apk --release
-  - name: Build iOS
-    script: flutter build ios
-artifacts:
-  - build/**/outputs/apk/**/*.apk
-  - build/**/outputs/**/*.aab
 publishing:
   firebase:
     firebase_token: $FIREBASE_TOKEN
     android:
       app_id: $APP_ID
+    artifact_type: "apk"
