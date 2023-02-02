@@ -21,6 +21,9 @@ scripts:
     script: flutter build apk --release
   - name: Build iOS
     script: flutter build ios
+artifacts:
+  - build/**/outputs/apk/**/*.apk
+  - build/**/outputs/**/*.aab
 publishing:
   firebase:
     firebase_token: $FIREBASE_TOKEN
