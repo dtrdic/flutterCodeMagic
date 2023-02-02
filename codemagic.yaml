@@ -3,3 +3,14 @@ workflows:
     name: Android Workflow
     max_build_duration: 120
     instance_type: mac_mini_m1
+environment:
+  groups:
+    - firebase_credentials
+  xcode: latest
+  cocoapods: default
+  cache:
+    cache_paths:
+      - $HOME/.gradle/caches
+      - $FLUTTER_ROOT/.pub-cache
+      - $HOME/Library/Caches/CocoaPods
+      - $CM_BUILD_DIR/node_modules
