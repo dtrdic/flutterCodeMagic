@@ -30,18 +30,20 @@ workflows:
           flutter build appbundle --release \
             --build-name=1.0.5 \
             --build-number=5
+      - name: Send email notification
+        script: |
+          email:
+          recipients:
+            - dtrdic2@gmail.com
+          notify:
+            success: true
+            failure: false
     artifacts:
       - build/**/outputs/**/*.aab
       - build/**/outputs/**/mapping.txt
       - flutter_drive.log
     publishing:
       firebase:
-        firebase_credentials: $FIREBASE_TOKEN
+        firebase_token: $FIREBASE_TOKEN
         android:
           app_id: $APP_ID
-        email:
-          recipients:
-            - dtrdic2@gmail.com
-          notify:
-            success: true
-            failure: false
