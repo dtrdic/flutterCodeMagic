@@ -3,45 +3,45 @@ workflows:
     name: Android Workflow
     max_build_duration: 120
     instance_type: mac_mini_m1
-environment:
-  android_signing:
-    - keystore_reference
-scripts:
-  - name: Set up local.properties
-    script: |
-      echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
-  - name: Get Flutter packages
-    script: |
-      flutter packages pub get
-  - name: Build AAB with Flutter
-    script: |
-      flutter build appbundle --release
-  - name: Build universal apk
-    script: |
-      android-app-bundle build-universal-apk \
-        --bundle 'project_directory/build/**/outputs/**/*.aab' \
-        --ks /tmp/keystore.keystore \
-        --ks-pass $CM_KEYSTORE_PASSWORD \
-        --ks-key-alias $CM_KEY_ALIAS \
-        --key-pass $CM_KEY_PASSWORD
-  - name: Build Android release
-    script: |
-      BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks="$GOOGLE_PLAY_TRACK") + 1))      
-      flutter build appbundle --release \
-        --build-name=1.0.5 \
-        --build-number=5
-artifacts:
-  - build/**/outputs/**/*.aab
-  - build/**/outputs/**/mapping.txt
-  - flutter_drive.log
-publishing:
-  firebase:
-    firebase_credentials: $FIREBASE_TOKEN
-    android:
-      app_id: $APP_ID
-    email:
-      recipients:
-        - dtrdic2@gmail.com
-      notify:
-        success: true
-        failure: false
+    environment:
+      android_signing:
+        - keystore_reference
+    scripts:
+      - name: Set up local.properties
+        script: |
+          echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+      - name: Build AAB with Flutter
+        script: |
+          flutter build appbundle --release
+      - name: Build universal apk
+        script: |
+          android-app-bundle build-universal-apk \
+            --bundle 'project_directory/build/**/outputs/**/*.aab' \
+            --ks /tmp/keystore.keystore \
+            --ks-pass $CM_KEYSTORE_PASSWORD \
+            --ks-key-alias $CM_KEY_ALIAS \
+            --key-pass $CM_KEY_PASSWORD
+      - name: Build Android release
+        script: |
+          BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks="$GOOGLE_PLAY_TRACK") + 1))      
+          flutter build appbundle --release \
+            --build-name=1.0.5 \
+            --build-number=5
+    artifacts:
+      - build/**/outputs/**/*.aab
+      - build/**/outputs/**/mapping.txt
+      - flutter_drive.log
+    publishing:
+      firebase:
+        firebase_credentials: $FIREBASE_TOKEN
+        android:
+          app_id: $APP_ID
+        email:
+          recipients:
+            - dtrdic2@gmail.com
+          notify:
+            success: true
+            failure: false
