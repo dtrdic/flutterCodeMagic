@@ -25,7 +25,7 @@ workflows:
       - name: Build universal apk
         script: |
           android-app-bundle build-universal-apk \
-            --bundle 'C:/CODE REPO/Flutter/CodeMagicTest2/davidapp/build/app/outputs/bundle/release/app-release.aab' \
+            --bundle 'build/app/outputs/bundle/release/app-release.aab' \
             --ks $CM_KEYSTORE_PATH \
             --ks-pass $CM_KEYSTORE_PASSWORD \
             --ks-key-alias $CM_KEY_ALIAS \
