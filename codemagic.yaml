@@ -35,14 +35,6 @@ workflows:
           flutter build appbundle --release \
             --build-name=1.0.5 \
             --build-number=5
-      - name: Send email notification
-        script: |
-          email:
-          recipients:
-            - dtrdic2@gmail.com
-          notify:
-            success: true
-            failure: false
     artifacts:
       - build/**/outputs/**/*.aab
       - build/**/outputs/**/mapping.txt
@@ -52,8 +44,8 @@ workflows:
         recipients:
           - dtrdic2@gmail.com
         notify:
-          success: true # To receive a notification when a build succeeds
-          failure: false # To not receive a notification when a build fails
+          success: true
+          failure: false
       firebase:
         firebase_token: MS8vMDl0T3phMTBEN25FOENnWUlBUkFBR0FrU053Ri1MOUlybUdoOTV4SWJ6bUdJVWlQdWtJdHNNWjN3QTJ0T0VMT2s4bUsyNV9EY09pSnBnd3N1aWdyNE0xRng0VWNQclJlc1hnMA==
         android:
