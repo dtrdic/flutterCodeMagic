@@ -8,6 +8,7 @@ workflows:
         - david reference name
       groups:
         - keystore_credentials
+        - firebase_credentials
       vars:
         KEYSTORE_PATH: /tmp/keystore.keystore
     scripts:
