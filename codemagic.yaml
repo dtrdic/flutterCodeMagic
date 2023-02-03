@@ -6,6 +6,8 @@ workflows:
     environment:
       android_signing:
         - david reference name
+      groups:
+        - keystore_credentials
     scripts:
       - name: Set up local.properties
         script: |
@@ -20,7 +22,7 @@ workflows:
         script: |
           android-app-bundle build-universal-apk \
             --bundle 'project_directory/build/**/outputs/**/*.aab' \
-            --ks 'C:/Program Files/Java/jdk-19/bin/codemagic.keystore' \
+            --ks /tmp/keystore.keystore \
             --ks-pass $CM_KEYSTORE_PASSWORD \
             --ks-key-alias $CM_KEY_ALIAS \
             --key-pass $CM_KEY_PASSWORD
