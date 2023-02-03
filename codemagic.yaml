@@ -34,6 +34,7 @@ workflows:
         script: |
           flutter build appbundle --release \
             --build-name=1.0.5 \
+            --build-number=5
     artifacts:
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/mapping.txt
