@@ -47,7 +47,7 @@ workflows:
           success: true
           failure: false
       firebase:
-        firebase_token: $FIREBASE_TOKEN
+        firebase_token: MS8vMDl0T3phMTBEN25FOENnWUlBUkFBR0FrU053Ri1MOUlybUdoOTV4SWJ6bUdJVWlQdWtJdHNNWjN3QTJ0T0VMT2s4bUsyNV9EY09pSnBnd3N1aWdyNE0xRng0VWNQclJlc1hnMA==
         android:
           app_id: 1:415099635189:android:ad5cbf6a24328db3b60cbc
           artifact_type: "apk"
