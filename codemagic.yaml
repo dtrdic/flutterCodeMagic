@@ -25,14 +25,13 @@ workflows:
       - name: Build universal apk
         script: |
           android-app-bundle build-universal-apk \
-            --bundle 'project_directory/build/**/outputs/**/*.aab' \
+            --bundle 'C:/CODE REPO/Flutter/CodeMagicTest2/davidapp/build/app/outputs/bundle/release/app-release.aab' \
             --ks $CM_KEYSTORE_PATH \
             --ks-pass $CM_KEYSTORE_PASSWORD \
             --ks-key-alias $CM_KEY_ALIAS \
             --key-pass $CM_KEY_PASSWORD
       - name: Build Android release
         script: |
-          BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks="$GOOGLE_PLAY_TRACK") + 1))      
           flutter build appbundle --release \
             --build-name=1.0.5 \
             --build-number=5
