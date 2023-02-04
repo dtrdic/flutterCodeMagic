@@ -23,6 +23,8 @@ workflows:
       - name: Build AAB with Flutter
         script: |
           flutter build appbundle --release
+            --build-name=1.0.5 \
+            --build-number=5
       - name: Build universal apk
         script: |
           android-app-bundle build-universal-apk \
@@ -31,11 +33,6 @@ workflows:
             --ks-pass $CM_KEYSTORE_PASSWORD \
             --ks-key-alias $CM_KEY_ALIAS \
             --key-pass $CM_KEY_PASSWORD
-      - name: Build Android release
-        script: |
-          flutter build appbundle --release \
-            --build-name=1.0.5 \
-            --build-number=5
     artifacts:
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/mapping.txt
