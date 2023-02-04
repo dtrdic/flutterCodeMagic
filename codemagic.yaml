@@ -48,7 +48,7 @@ workflows:
           success: true
           failure: false
       firebase:
-        firebase_token: \nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDIs7NesKaAyByF\nJiAkmnYGcQRcOxVb1u/pkTg9FfWCnlTWCfV50MZOQj2kskATTTf09mpggPIfx+58\nwI1mw1+EU7rKj3D1zh8aBZ72MvnBf/lHP5G5zcB6KqztwXQkzvsnLJ9VnR9MccXW\nzurbXOXSJNWN7Rd+8AVHmmDAPA/L/Z4oStJUWGkRys7khcCCcq3tD1jDxIUEPJF8\nMyeNNCMwFx1HC+rx4P4qeowMGNkt67ycBlEztCwMiQzRDvr0j3gaTLli4aXa/2p+\naKBvUG+d4un+nRGZ3LB/wxDXc2b2aB9Es/b0NqXXuCfaxfzuBRuJTRlyJko2PJxX\nb4nhp4uVAgMBAAECggEAAeAwEnf7LmPwZEwta7on1TqULFp/Ahs5pciuKl/8qepZ\n56AzM57AY7XZxqLF14hWuArfhqRd3u8q6u6Pw8CasW1o5wC9MQbqon8f87QZQnY0\nOba94WsrW9jvQc+XisqGbWDM4mt0Ae5kR3QqnL87BKJEfq2TFSQgIIGwWsuU6Daj\n1oSvSGGi5o/iG/KV9a8MVABmQX8Eflm4U6m/y9Ck+1pTP6UFQkUan/QBIdR5OXsG\nF3uAFRUg8XxCWirIyRWBbOLQpvPk0GMCev0PsFff9Yt7SkyD8T3zE2hUnsmDtYQo\n7tdKTHhybBr9A8bXyft8KsgfGMRwM2WyteufekELcQKBgQD0cDbDHkUKK5KuoV7C\nqEXF+p4MAhJKIb3J1DcefmwHEm7JsATvLQNgL6TTGgkaVWIrQinVz/I8ywF7Dvbf\nGw9epf2MGsbq5CDWyXL/iZ+gikBTB4qdOjLz2oKP4qfNtUlHZ59yPpDgaGFKvs7C\nPlsdSSd/o7jqqUVIOFim0WM8qQKBgQ
+        firebase_token: 1//094c3oGAXhhWlCgYIARAAGAkSNwF-L9Ir4TjrzrN-NdveP7INCA7MVIoB-8_40AoBJk0mh5DGN8bJvKJsH3heB1eHeC3nS62-CSw
         android:
           app_id: 1:415099635189:android:ad5cbf6a24328db3b60cbc
           artifact_type: "apk"
