@@ -1,51 +1,14 @@
 workflows:
-  android-workflow:
-    name: Android Workflow
-    max_build_duration: 120
-    instance_type: mac_mini_m1
-    environment:
-      android_signing:
-        - david reference name
-      groups:
-        - keystore_credentials
-        - firebase_credentials
-      vars:
-        KEYSTORE_PATH: /tmp/keystore.keystore
-    scripts:
-      - name: Prepare code signing
-        script: echo $KEYSTORE | base64 --decode > $KEYSTORE_PATH
-      - name: Set up local.properties
-        script: |
-          echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
-      - name: Get Flutter packages
-        script: |
-          flutter packages pub get
-      - name: Build AAB with Flutter
-        script: |
-          flutter build appbundle --release \
-            --build-name=1.0.5 \
-            --build-number=5
-      - name: Build universal apk
-        script: |
-          android-app-bundle build-universal-apk \
-            --bundle 'build/app/outputs/bundle/release/app-release.aab' \
-            --ks $CM_KEYSTORE_PATH \
-            --ks-pass $CM_KEYSTORE_PASSWORD \
-            --ks-key-alias $CM_KEY_ALIAS \
-            --key-pass $CM_KEY_PASSWORD
-    artifacts:
-      - build/**/outputs/**/*.apk
-      - build/**/outputs/**/mapping.txt
-      - flutter_drive.log
-    publishing:
-      email:
-        recipients:
-          - dtrdic2@gmail.com
-        notify:
-          success: true
-          failure: false
-      firebase:
-        firebase_token: 1//094c3oGAXhhWlCgYIARAAGAkSNwF-L9Ir4TjrzrN-NdveP7INCA7MVIoB-8_40AoBJk0mh5DGN8bJvKJsH3heB1eHeC3nS62-CSw
-        android:
-          app_id: 1:415099635189:android:ad5cbf6a24328db3b60cbc
-          artifact_type: "apk"
+  build-and-test:
+    name: Build and Test
+scripts:
+  - echo "single line script"
+  - name: Flutter test
+    script: flutter test
+    ignore_failure: true
+  - |
+    #!/usr/bin/env python3
+
+    print('Multiline Python script')
+  - name: Build for iOS
+    script: flutter build ios
